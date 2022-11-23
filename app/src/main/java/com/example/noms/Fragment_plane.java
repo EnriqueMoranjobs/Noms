@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +19,7 @@ import android.widget.Toast;
  */
 public class Fragment_plane extends Fragment {
 
-    private  ImageView imageViewPlano;
+    private  ImageView imageViewCocina;
     private  View view;
     private int xInt;
     private int yInt;
@@ -72,28 +71,18 @@ public class Fragment_plane extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_plane, container, false);
-        imageViewPlano = view.findViewById(R.id.idPlano);
+        imageViewCocina = view.findViewById(R.id.idImageViewCocina);
 
 
-        imageViewPlano.setOnClickListener(new View.OnClickListener() {
+        imageViewCocina.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                int[] values = new int[2];
-                view.getLocationOnScreen(values);
-                for (int i = 0; i < values.length ; i++) {
-                    xInt = values[0];
-                    yInt= values[1];
-                }
-                String puta = String.valueOf(yInt+xInt);
-                Toast.makeText(getActivity(),puta,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"Cocina",Toast.LENGTH_SHORT).show();
             }
         });
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.plano);
 
-
-        Bitmap cropbitmap = Bitmap.createBitmap(bitmap, xInt, yInt, 531, 381);
 
 
 
